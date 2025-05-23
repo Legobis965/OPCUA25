@@ -26,6 +26,7 @@ if (file_exists($publicPath) && is_file($publicPath)) {
         'png'  => 'image/png',
         'jpg'  => 'image/jpeg',
         'jpeg' => 'image/jpeg',
+        'webp' => 'image/webp',
         'html' => 'text/html',
         'htm'  => 'text/html',
     ];
