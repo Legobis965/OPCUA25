@@ -1,0 +1,317 @@
+main {
+    margin-top: 0;
+    padding: 0;
+}
+
+section {
+    display: flex;
+}
+
+.control-panel {
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+    padding: 15px;
+    width: 350px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    gap: 15px;
+    z-index: 1000;
+}
+
+h3 {
+    color: white;
+}
+
+.text-icon img {
+    width: 25px;
+    margin-right: 5px;
+}
+
+.control-panel .machine-name {
+    text-align: center;
+}
+
+.control-panel .machine-name img {
+    width: 100%;
+}
+
+/* Ajout du style pour afficher l'état de la machine */
+.status-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* État: Arrêt */
+.status-indicator.offline {
+    background-color: var(--error-color);
+    color: white;
+}
+
+/* État: En marche */
+.status-indicator.online {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+/* État: En production */
+.status-indicator.production {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.status-indicator.offline::after {
+    content: "A l'arrêt";
+}
+
+.status-indicator.online::after {
+    content: "En marche";
+}
+
+.status-indicator.production::after {
+    content: "En production...";
+}
+
+.date-time {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+input[type="datetime-local"] {
+    background: var(--secondary-color);
+    border: 1px solid #444;
+    color: var(--inverted-secondary-color);
+    padding: 10px;
+    border-radius: 75px;
+    font-size: 1rem;
+    outline: none;
+    margin: 5px 0;
+    transition: border-color 0.3s ease;
+}
+
+input[type="datetime-local"]:hover, input[type="datetime-local"]:focus {
+    border-color: var(--inverted-secondary-color);
+}
+
+label.checkbox {
+    margin-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+select {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.control-panel button {
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.control-panel .controls-container {
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+.control-panel .controls {
+    gap: 15px;
+    position: sticky;
+    bottom: 15px;
+}
+
+.control-panel .controls a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 75px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.stats {
+    width: 100%;
+    padding: 40px;
+    gap: 40px;
+}
+
+.stats .messages {
+    display: flex;
+    gap: 20px;
+}
+
+.stats .messages > div {
+    width: 100%;
+    gap: 20px;
+}
+
+.scroll-button {
+    position: fixed;
+    bottom: -100%;
+    right: 15px;
+    transition: transform .3s, bottom .5s;
+}
+
+.scroll-button.visible  {
+    bottom: 15px;
+}
+
+.scroll-button img {
+    width: 50px;
+    height: 50px;
+}
+
+.scroll-button:hover {
+    transform: translateY(-5px);
+}
+
+.text-icon {
+    justify-content: flex-start;
+}
+
+body.light .text-icon img {
+    filter: invert();
+}
+
+#restart-machine {
+    display: none;
+}
+
+#stop-machine {
+    display: none;
+}
+
+.stats .graph {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr; /* 3 colonnes */
+    grid-auto-rows: 250px;  
+    gap: 30px;
+    margin: 40px auto;
+}
+
+.stats .graph iframe {
+    width: 100%; 
+    height: 100%;
+}
+
+@media screen and (max-width: 1585px) {
+    .stats .graph {
+        grid-template-columns: 2fr 2fr; 
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    
+    section {
+        flex-direction: column;
+    }
+    
+    .control-panel {
+        flex-direction: row;
+        height: inherit;
+        width: 100%;
+    }
+    
+    .control-panel .machine-name {
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .control-panel .machine-name img {
+        width: 220px;
+    }
+
+    .control-panel .controls {
+        justify-content: center;
+    }
+
+    .control-panel .controls-container {
+        align-items: flex-end;
+    }
+
+    .stats {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .control-panel .machine-name {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 590px) {
+
+    .control-panel {
+        flex-direction: column;
+        position: inherit;
+    }
+
+    .control-panel .controls, .stats, .stats .messages {
+        flex-direction: column;
+    }
+
+    .control-panel .machine-name {
+        justify-content: center;
+    }
+
+    .control-panel .controls-container {
+        align-items: center;
+    }
+
+    .control-panel .machine-name img {
+        width: 200px;
+    }
+    
+    .stats {
+        padding: 15px;
+    }
+
+    .stats .graph {
+        grid-template-columns: 2fr; 
+    }
+}
+
+@media screen and (max-width: 410px)  {
+
+    .stats,
+    .control-panel .controls,
+    .control-panel .machine-name {
+        flex-direction: column;
+    }
+
+    .control-panel .machine-name img {
+        width: 130px;
+    }
+}
+
+@media screen and (max-height: 650px) and (max-width: 1000px) {
+
+    .control-panel {
+        position: inherit;
+    }
+}

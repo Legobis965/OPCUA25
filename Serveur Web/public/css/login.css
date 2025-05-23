@@ -1,0 +1,171 @@
+body {
+    background-color: black !important;
+    background-image: none;
+}
+
+.main {
+    height: 100%;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("/image/ilôt Connecté.jpg");
+    z-index: -10;
+    filter: brightness(.7) blur(20px);
+}
+
+.container {
+    justify-content: center;
+    position: relative;
+    gap: 0;
+    min-height: 400px;
+    max-height: 600px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px black;
+}
+
+.login-container {
+    padding: 35px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    flex-direction: column;
+    align-items: inherit;
+}
+
+body.light .login-container {
+    background-color: white;
+}
+
+body.dark .login-container {
+    background-color: var(--secondary-color);
+}
+
+form button {
+    width: 100%;
+}
+
+body.light header {
+    background-color: transparent;
+}
+
+body.light header img {
+    filter: inherit;
+}
+
+body.dark header {
+    background-color: transparent;
+}
+
+header {
+    background-color: transparent;
+    border: none;
+}
+
+header .button {
+    display: none;
+} 
+
+.sun-and-moon > :is(.moon, .sun) {
+    fill: white;
+}
+  
+.sun-and-moon > .sun-beams {
+    stroke: white;
+}
+
+.welcome-section {
+    padding: 10vw 5vw;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.welcome-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0) ;
+    background-image: url("/image/ilôt Connecté.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    filter: brightness(.5) blur(1px);
+}
+
+.welcome-section h1 {
+    font-size: clamp(30px, 5vw, 75px);
+}
+
+.welcome-section p {
+    color: white;
+}
+
+.welcome-section .title {
+    gap: 30px;
+}
+
+.welcome-section .title img{
+    width: 150px;
+}
+
+h1 {
+    color: white;
+}
+
+h2 {
+    margin-bottom: 25px;
+}
+
+footer {
+    border-top: none;
+}
+
+footer p {
+    color: white;
+}
+
+@media screen and (max-width: 800px) {
+
+    .container {
+        max-height: inherit;
+        flex-direction: column;
+    }
+
+    .welcome-section h1, .welcome-section p {
+        text-align: center;
+    }
+
+    .login-container {
+        max-width: inherit;
+    }
+}
+
+@media screen and (max-width: 460px) {
+
+    .welcome-section .title {
+        gap: 15px;
+        flex-direction: column;
+    }
+    
+    .welcome-section .title img{
+        width: 100px;
+    }
+    
+    .welcome-section {
+        gap: 15px;
+    }
+}

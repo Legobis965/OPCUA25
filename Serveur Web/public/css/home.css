@@ -1,0 +1,93 @@
+main .center-container {
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 60px;
+}
+
+.container-machine {
+    padding: 30px 30px 10px 30px;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container-machine:hover{
+    transform: scale(1.03);
+}
+
+.container-machine img {
+    width: 100%;
+    max-height: 360px;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.machine-name {
+    color: var(--text-color);
+    padding: 0;
+    font-size: clamp(30px, 8vw, 45px);
+}
+
+h2 {
+    padding-top: 20px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 15px;
+}
+
+.state::before {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+}
+
+.production.state::before {
+    background-color: var(--success-color);
+}
+
+.online.state::before {
+    background-color: var(--warning-color);
+}
+
+.offline.state::before {
+    background-color: var(--error-color);
+}
+
+.state::after {
+    border-radius: 150px;
+    color: white;
+}
+
+.online.state::after {
+    content: "En marche";
+    color: var(--text-color);
+}
+
+.offline.state::after {
+    content: "À l'arrêt";
+    color: var(--text-color);
+}
+
+.production.state::after {
+    content: "En production...";
+    color: var(--text-color);
+}
+
+.button.admin {
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 950px) {
+    .container-machine img {
+        max-width: 360px;
+        max-height: inherit;
+    }
+}

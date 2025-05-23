@@ -1,0 +1,60 @@
+h2 {
+    margin-bottom: 30px;
+}
+
+main .box {
+    margin: 50px auto;
+    padding: 0;
+    width: 70%;
+}
+
+table {
+    color: var(--text-color);
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table tr {
+    border-bottom: 1px solid var(--inverted-secondary-color);
+}
+
+table tbody tr:last-of-type {
+    border: none;
+}
+
+table th {
+    text-align: left;
+    padding: 15px;
+}
+
+table th.action {
+    text-align: right;
+}
+
+table td {
+    padding: 15px;
+}
+
+table td span {
+    opacity: .5;
+}
+
+table td.action {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+main > .button {
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 700px) {
+    main .box {
+        width: 100%;
+    } 
+
+    table td.action {
+        flex-direction: column;
+    }
+}

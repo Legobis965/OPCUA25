@@ -1,0 +1,4 @@
+<iframe src="http://<?= $_SERVER['HTTP_HOST'] ?>:3000/d-solo/debngcv4lb7k0b/new-dashboard?orgId=1&timezone=Europe%2FParis&refresh=5s&theme=dark&panelId=2&__feature.dashboardSceneSolo" frameborder="0"></iframe> -->
+<iframe src="http://<?= $_SERVER['HTTP_HOST'] ?>:3000/d-solo/debngcv4lb7k0b/new-dashboard?orgId=1&timezone=Europe%2FParis&refresh=5s&theme=dark&panelId=1&__feature.dashboardSceneSolo" frameborder="0"></iframe>
+<iframe src="http://<?= $_SERVER['HTTP_HOST'] ?> :3000/d-solo/debngcv4lb7k0b/new-dashboard?orgId=1&timezone=Europe%2FParis&from=now-5m&to=now&refresh=5s&theme=dark&panelId=3&__feature.dashboardSceneSolo" frameborder="0"></iframe>
+ 
