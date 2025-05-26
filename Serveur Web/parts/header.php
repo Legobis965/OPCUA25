@@ -22,6 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ilôt connecté</title>
     <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="/css/style.css">
     <?php if (file_exists($filePath)): ?>
         <link rel="stylesheet" href="/css/<?= $fileName ?>">
@@ -33,7 +34,7 @@
 <body class="light">
     <header>
         <a href="/" class="logo-container">
-            <img src="/image/logo ilot connecté.png" alt="Logo Ilôt Connecté" class="logo">
+            <img src="/image/logo-ilot-connecté.png" alt="Logo Ilôt Connecté" class="logo">
             <h1 class="header">Ilôt connecté</h1>
         </a>
         <div class="center-container">

@@ -23,7 +23,7 @@ body {
 }
 
 body.light {
-    background-color: rgb(190, 190, 190);
+    background-color: #bebebe;
     --secondary-color: white;
     --inverted-secondary-color: #181b1f;
     --tertiary-color: #f4f5f5;

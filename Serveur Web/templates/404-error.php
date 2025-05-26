@@ -1,3 +1,7 @@
+<?php
+http_response_code(404);
+?>
+
 <style>
     body.dark img {
         filter: invert();

@@ -1,0 +1,21 @@
+{
+  "name": "Ilot connecté",
+  "short_name": "Ilot connecté",
+  "description": "Accédez à votre espace personnalisé et profitez d’une gestion simplifiée de vos machines connectées.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#181b1f",
+  "theme_color": "#5794f2",
+  "icons": [
+    {
+      "src": "/image/favicon.ico",
+      "sizes": "256x256",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/image/logo-ilot-connecté.png",
+      "sizes": "500x500",
+      "type": "image/png"
+    }
+  ]
+}

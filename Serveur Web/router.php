@@ -29,6 +29,7 @@ if (file_exists($publicPath) && is_file($publicPath)) {
         'webp' => 'image/webp',
         'html' => 'text/html',
         'htm'  => 'text/html',
+        'ico'  => 'image/x-icon'
     ];
 
     $mimeType = $mimeTypes[$ext] ?? 'application/octet-stream';
