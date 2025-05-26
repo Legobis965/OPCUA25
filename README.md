@@ -14,7 +14,7 @@ L’objectif est de proposer une alternative moderne, intuitive et sécurisée �
 
 ## 👨‍💻 Auteurs
 Projet réalisé par :
-- Michel MATHYS
+- Mathys MICHEL
 - Clovis MONDON
 - Nicolas HAPETIAN
 - Quentin SALELLE
