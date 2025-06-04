@@ -1,5 +1,9 @@
 # OPCUA25 – îlot connecté
 
+### Identifiants de connexion
+- Nom d'utilisateur : admin
+- Mot de passe : admin
+
 ## 📌 Présentation
 
 Ce projet a été réalisé dans le cadre du BTS CIEL au Lycée Charles Poncet (Cluses) durant l'année 2024-2025. Il vise à superviser un îlot de production composé de trois machines industrielles (fraiseuse, tour, décolleteuse) équipées de panneaux Fanuc 31i B avec l’option OPC UA.
