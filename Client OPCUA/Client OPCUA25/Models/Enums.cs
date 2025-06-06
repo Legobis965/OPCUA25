@@ -61,8 +61,10 @@ internal enum MachineModes
     MEM = 200,
     [EnumMember(Value = "EDIT")]
     EDIT = 300,
-    [EnumMember(Value = "REMOTE")]
+    [EnumMember(Value = "RMT")]
     REMOTE = 400,
     [EnumMember(Value = "JOG")]
-    JOG = 500
+    JOG = 500,
+    [EnumMember(Value = "HND")]
+    HANDLE = 600
 }

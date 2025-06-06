@@ -52,7 +52,11 @@ internal class OPCWebSocketClient : IDisposable
                 }
 
                 // Vérification du token
-                if (token == parts[0]) return true;
+                if (token == parts[0])
+                {
+                    File.Delete(file);
+                    return true;
+                }
             }
         }
         return false;

@@ -1,5 +1,6 @@
-﻿using Opc.UaFx;
+﻿using System.Runtime.Serialization;
 using Client_OPCUA25.Models;
+using Opc.UaFx;
 
 namespace Client_OPCUA25.OPC_UA;
 
@@ -29,5 +30,18 @@ internal static class OPC_UAParsers
     /// </summary>
     /// <param name="value">Valeur OPCUA</param>
     /// <returns>Mode de la machine</returns>
-    public static object ParseMode(OpcValue value) => Enum.Parse<MachineModes>(value.ToString());
+    public static object ParseMode(OpcValue value)
+    {
+        foreach (var field in typeof(MachineModes).GetFields())
+        {
+            var attribute = field
+                .GetCustomAttributes(typeof(EnumMemberAttribute), false)
+                .Cast<EnumMemberAttribute>()
+                .FirstOrDefault();
+
+            if (attribute?.Value == value.ToString() && field.GetValue(null) is MachineModes mode) return mode;
+        }
+
+        throw new NotImplementedException();
+    }
 }
