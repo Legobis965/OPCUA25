@@ -18,7 +18,7 @@ internal static class InfluxDB
 
     public static class Credentials
     {
-        public const string TOKEN = ".....";
+        public const string TOKEN = "R6AIhiDpzW6pTCJYj2Ka1dZgwUlg6jHKTuDRg64vMeXu22bBC7iU5vJ3pk-CNXYspYJR9v_jhVfkOUcb4k0pzA==";
         public const string SERVER_URI = "http://localhost:8086/";
         public const string BUCKET = "IlotConnecte";
         public const string ORG = "Opcua25";
