@@ -34,9 +34,6 @@
                     </label> 
                     <div class="realtime">
                         <select class="center-container" id="realtime-selector" onchange="updateIframesTimeRange()">
-                            <option value="now-10s">10 dernières secondes</option>
-                            <option value="now-30s">30 dernières secondes</option>
-                            <option value="now-60s">60 dernières secondes</option>
                             <option value="now-5m">5 dernières minutes</option>
                             <option value="now-15m">15 dernières minutes</option>
                             <option value="now-30m">30 dernières minutes</option>

@@ -1,5 +1,5 @@
-﻿using System.Runtime.Serialization;
-using Client_OPCUA25.Models;
+﻿using Client_OPCUA25.Models;
+using Opc.Ua;
 using Opc.UaFx;
 
 namespace Client_OPCUA25.OPC_UA;
@@ -18,10 +18,10 @@ internal static class OPC_UAParsers
     {
         if (value.ToString() == "START")
             return MachineStates.Production;
-        else if (value.Status.CodeBits == (uint)OpcStatusCode.BadNotConnected)
+        var codeBits = value.Status.CodeBits;
+        if (codeBits == (uint)OpcStatusCode.BadNotConnected || value.Status.Code.IsBad() && (codeBits & 0x00010000) != 0)
             return MachineStates.Offline;
-        else
-            return MachineStates.Online;
+        return MachineStates.Online;
     }
 
 
@@ -30,18 +30,5 @@ internal static class OPC_UAParsers
     /// </summary>
     /// <param name="value">Valeur OPCUA</param>
     /// <returns>Mode de la machine</returns>
-    public static object ParseMode(OpcValue value)
-    {
-        foreach (var field in typeof(MachineModes).GetFields())
-        {
-            var attribute = field
-                .GetCustomAttributes(typeof(EnumMemberAttribute), false)
-                .Cast<EnumMemberAttribute>()
-                .FirstOrDefault();
-
-            if (attribute?.Value == value.ToString() && field.GetValue(null) is MachineModes mode) return mode;
-        }
-
-        throw new NotImplementedException();
-    }
+    public static object ParseMode(OpcValue value) => Enum.Parse<MachineModes>(value.ToString());
 }
