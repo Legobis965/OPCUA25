@@ -1,6 +1,5 @@
-﻿using Client_OPCUA25.Models;
-using Opc.Ua;
-using Opc.UaFx;
+﻿using Opc.UaFx;
+using Client_OPCUA25.Models;
 
 namespace Client_OPCUA25.OPC_UA;
 
@@ -18,10 +17,10 @@ internal static class OPC_UAParsers
     {
         if (value.ToString() == "START")
             return MachineStates.Production;
-        var codeBits = value.Status.CodeBits;
-        if (codeBits == (uint)OpcStatusCode.BadNotConnected || value.Status.Code.IsBad() && (codeBits & 0x00010000) != 0)
+        else if (value.Status.CodeBits == (uint)OpcStatusCode.BadNotConnected)
             return MachineStates.Offline;
-        return MachineStates.Online;
+        else
+            return MachineStates.Online;
     }
 
 
